@@ -4,7 +4,9 @@ function GetHome(path) {
 	const [data, setdata] = useState({
         firstName: "John",
         lastName: "Doe",
-        about : "Missing"
+        intro: "Missing",
+        about : "Missing",
+        portfolios : []
         });
     
     // Using useEffect for single rendering
@@ -17,7 +19,9 @@ function GetHome(path) {
                 setdata({
                     firstName : data.first_name,
                     lastName : data.last_name,
-                    about : data.about
+                    intro : data.intro,
+                    about : data.about,
+                    portfolios : data.portfolios
                 });
             })
         )

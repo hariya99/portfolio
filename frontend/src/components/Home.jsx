@@ -3,13 +3,13 @@ import React from 'react'
 // import { Link } from 'react-scroll';
 
 import image from '../assets/myImage.JPG'
-import GetHome from '../Utils'
+// import GetHome from '../Utils'
 
-const Home = () => {
+const Home = ({firstName, lastName, intro}) => {
     // make REST API call to get the data from the backend
-    const data = GetHome("/home")
+    // const data = GetHome("/home")
     return (
-        <div name= 'Home' className='h-screen w-full bg-gradient-to-b from-black via-black   to-gray-800'>
+        <div name= 'Home' className='h-screen w-full bg-black'>
             <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full
             px-4 md:flex-row text-white'>
                 <div className=' flex flex-col justify-center h-full'>
@@ -17,10 +17,10 @@ const Home = () => {
                         Hi, I am
                     </p>
                     <h2 className='text-4xl sm:text-7xl font-bold'>
-                        {data.firstName + " " + data.lastName}
+                        {firstName + " " + lastName}
                     </h2>
                     <p className=' text-gray-500 py-4 text-justify'>
-                        {data.about}
+                        {intro}
                     </p>
                     {/* <div>
                         <Link to="Portfolio" smooth duration={500} className=' group text-white w-fit px-6 py-3 my-2 flex items-center 

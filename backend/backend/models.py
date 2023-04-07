@@ -35,9 +35,20 @@ class UserDetails(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(100), nullable=False)
     last_name = db.Column(db.String(100), nullable=False)
+    intro = db.Column(db.String(200), nullable=False)
     about = db.Column(db.String(1000), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
     def __repr__(self) -> str:
         return f"UserDetails({self.first_name}, {self.last_name}, {self.about})"
 
+# table for storing the projects
+class Portfolio(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.LargeBinary, nullable=False)
+    title = db.Column(db.String(100), nullable=False)
+    url = db.Column(db.String(200), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+
+    def __repr__(self) -> str:
+        return f"Portfolio({self.title}, {self.url})"
